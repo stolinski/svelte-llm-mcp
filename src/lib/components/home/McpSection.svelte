@@ -57,15 +57,27 @@
 			description:
 				'Add this URL to your Cline MCP settings. Name the MCP svelte-llm or whatever you like.'
 		},
-		{
+		
 			id: 'codex-cli',
 			name: 'OpenAI Codex',
 			icon: '🧰',
 			description: 'Add this to ~/.codex/config.toml',
 			instruction: `[mcp_servers.svelte-llm]
 command = "npx"
-args = ["-y", "mcp-remote", "${streamableEndpoint}"]
+argsl = ["-y", "mcp-remote", "${streamableEndpoint}"]
 `,
+			isConfig: true
+		},{
+			id: 'opencode',
+			name: 'Opencode',
+			icon: '📖',
+			description:
+				'Put this in you opencode.json inside of the "mcp" object.',
+			instruction: `"svelte-llm": {
+"type": "remote",
+"url": "https://svelte-llm.stanislav.garden/mcp/mcp",
+"enabled": true
+}`,
 			isConfig: true
 		},
 		{
